@@ -1,0 +1,24 @@
+<div class="container">
+    <h3>Add a new Todo</h3>
+    <!--Adding-->
+  <div class="todo-add">
+      <div class="mb-3">
+          <label class="form-label">Title</label>
+          <input type="text" class="form-control" #task placeholder="Type a todo">
+      </div>
+      <button class="btn btn-primary" (click)="addTask(task.value)">Add Todo</button>
+    </div>  
+  <hr>
+  <!--Displaying-->
+  <h3>Todo's to complete</h3>
+  <div class="todo-item" *ngFor="let item of list">
+    <div id="name">
+        <h3>{{item.name}}</h3>
+    </div>
+
+    <div id="button">
+        <button class="btn-danger btn-sm" (click)="removeTask(item.id)" >Delete</button>
+    </div>  
+  </div>
+  
+</div>
